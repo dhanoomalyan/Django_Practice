@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <nav>
+        <a href="{% url 'UserApp:register' %}">New User</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'UserApp:user_logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'UserApp:user_login' %}">Login</a>
+        {% endif %}
+        <a href="{% url 'admin:index' %}">Admin Page</a>
+    </nav>
+</body>
+{% block body_block %}
+{% endblock %}
+</html>
